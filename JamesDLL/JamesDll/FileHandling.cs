@@ -18,6 +18,11 @@ namespace JamesDll
 
             string[] pathSplit = path.Split('.');
 
+            if (pathSplit.Last().Contains("?"))
+            {
+                pathSplit[pathSplit.Length - 1] = pathSplit.Last().Split('?').First();
+            }
+
             return fileType = "." + pathSplit.Last();
         }
 
